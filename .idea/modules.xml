@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Bio_reactor_emulator.iml" filepath="$PROJECT_DIR$/.idea/Bio_reactor_emulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/projet_reacteur.iml" filepath="$PROJECT_DIR$/.idea/projet_reacteur.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reactor/reactor.iml" filepath="$PROJECT_DIR$/reactor/reactor.iml" />
     </modules>
   </component>
 </project>
