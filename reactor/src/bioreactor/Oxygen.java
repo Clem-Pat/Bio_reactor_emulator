@@ -4,6 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 public class Oxygen implements IVariable, PropertyChangeListener {
+    public String type = "O2";
 
     BioreacteurGUI myGui;
     AllData leData;// pas sur, je sousentend l'existence ultérieure d'un seule endroit pour les données

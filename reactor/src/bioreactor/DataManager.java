@@ -22,14 +22,14 @@ public class DataManager {
         }
         return list;
     }
-    public String repr(String time, IVariable variable) throws IOException{
+    public String repr(String time, Variable variable) throws IOException{
         String line = repr(time);
         if (variable.type == "T"){
-            return line.substring(16, Math.min(line.length(), 25));
+            return line.substring(16, Math.min(line.length(), 26));
         } else if (variable.type == "O2") {
-            return line.substring(26, Math.min(line.length(), 35));
-        } else if (variable.type == "PH") {
-            return line.substring(36, Math.min(line.length(), 45));
+            return line.substring(26, Math.min(line.length(), 36));
+        } else if (variable.type == "Ph") {
+            return line.substring(36, Math.min(line.length(), 46));
         }
         return "Not a correct variable type";
     }
@@ -39,7 +39,7 @@ public class DataManager {
     public String repr(String time) throws IOException{
         String line;
         while ((line = br.readLine())!= null){
-            String this_time = line.substring(0, Math.min(line.length(), 15));
+            String this_time = line.substring(0, Math.min(line.length(), 16));
             if (this_time.equals(time)){
                 return line;
             };

@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="variables">
-      <change afterPath="$PROJECT_DIR$/reactor/src/tests/DataManagerTest.java" afterDir="false" />
+    <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="DataManager">
+      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Variable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/DataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/IVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/IVariable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/Oxygen.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Oxygen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/Parameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Parameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/Ph.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Ph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/Temperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Temperature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/tests/DataManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/tests/DataManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +73,7 @@
       <recent name="C:\projet_reacteur\out" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.DataManagerTest.represent_specific_time_specific_parameter">
     <configuration name="DataManagerTest.represent_specific_time" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="reactor" />
       <extension name="coverage">
@@ -84,8 +90,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DataManagerTest.represent_specific_time_specific_parameter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reactor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DataManagerTest" />
+      <option name="METHOD_NAME" value="represent_specific_time_specific_parameter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataManagerTest.represent_specific_time_specific_parameter" />
         <item itemvalue="JUnit.DataManagerTest.represent_specific_time" />
       </list>
     </recent_temporary>
@@ -117,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707752697760</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="DataManager">
+      <option name="closed" value="true" />
+      <created>1708356660939</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708356660939</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +168,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cl" />
     <MESSAGE value="variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="variables" />
+    <MESSAGE value="DataManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="DataManager" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

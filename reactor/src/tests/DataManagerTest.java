@@ -19,7 +19,12 @@ public class DataManagerTest {
     @Test
     public void represent_specific_time() throws IOException {
         String line = manager.br.readLine();
-        System.out.println(line.substring(0, Math.min(line.length(), 15)));
+        System.out.println(line.substring(0, Math.min(line.length(), 16)));
         System.out.println(manager.repr("03/10/2022 18:15"));
+    }
+    @Test
+    public void represent_specific_time_specific_parameter() throws IOException {
+        Temperature temp = new Temperature();
+        System.out.println(manager.repr("03/10/2022 18:15", temp));
     }
 }
