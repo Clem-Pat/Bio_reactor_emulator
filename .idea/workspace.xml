@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="cl">
-      <change afterPath="$PROJECT_DIR$/client/ClientGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/ClientTCP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/AllData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/BioreacteurGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/IContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/IProtocole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Oxygen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Parameter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/ServeurTCP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="variables">
+      <change afterPath="$PROJECT_DIR$/reactor/src/tests/DataManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/DataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/IVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/IVariable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/Oxygen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/Ph.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Ph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/Temperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Temperature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/DataManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,18 +39,25 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projet_reacteur&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projet_bio_reacteur/poi-src-5.2.5-20231118&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/projet_reacteur/reactor/src/Main.java&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/projet_reacteur/reactor/tests/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -74,6 +67,29 @@
       <recent name="C:\projet_reacteur\out" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="DataManagerTest.represent_specific_time" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reactor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DataManagerTest" />
+      <option name="METHOD_NAME" value="represent_specific_time" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DataManagerTest.represent_specific_time" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,7 +98,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707751805170</updated>
-      <workItem from="1707751806293" duration="860000" />
+      <workItem from="1707751806293" duration="6061000" />
+      <workItem from="1708346455810" duration="5490000" />
     </task>
     <task id="LOCAL-00001" summary="cl">
       <option name="closed" value="true" />
@@ -92,15 +109,35 @@
       <option name="project" value="LOCAL" />
       <updated>1707752061634</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="variables">
+      <option name="closed" value="true" />
+      <created>1707752697760</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707752697760</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cl" />
-    <option name="LAST_COMMIT_MESSAGE" value="cl" />
+    <MESSAGE value="variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="variables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

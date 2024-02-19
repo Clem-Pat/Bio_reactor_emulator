@@ -1,4 +1,5 @@
 package bioreactor;
 
-public class Ph implements IVariable{
+public abstract class Ph implements IVariable{
+
 }

@@ -1,5 +1,5 @@
 package bioreactor;
 
-public class Temperature implements IVariable{
+public abstract class Temperature implements IVariable{
 
 }
