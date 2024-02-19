@@ -2,8 +2,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.*;
 import java.util.ArrayList;
+
 public class DataManager {
     static BufferedReader br;
+
     public static void main(String[] args) throws IOException {
 //        if (path == null){
 //            path = "C:\\Users\\Clément Patrizio\\Desktop\\2022-10-03-Act2-2.txt"

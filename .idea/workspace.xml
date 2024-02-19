@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="variables">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="cl">
+      <change afterPath="$PROJECT_DIR$/client/ClientGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/ClientTCP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/AllData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/BioreacteurGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/IContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/IProtocole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Oxygen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Parameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/ServeurTCP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/DataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/IVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/IVariable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/DataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/IVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/IVariable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/Oxygen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/Ph.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Ph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/Temperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Temperature.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,31 +51,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "C:/projet_bio_reacteur/poi-src-5.2.5-20231118",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "C:/projet_reacteur/reactor/tests/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projet_reacteur&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/projet_reacteur/reactor/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\projet_reacteur\out" />
@@ -77,8 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707751805170</updated>
-      <workItem from="1707751806293" duration="6061000" />
-      <workItem from="1708346455810" duration="5490000" />
+      <workItem from="1707751806293" duration="860000" />
     </task>
     <task id="LOCAL-00001" summary="cl">
       <option name="closed" value="true" />
@@ -88,35 +92,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707752061634</updated>
     </task>
-    <task id="LOCAL-00002" summary="variables">
-      <option name="closed" value="true" />
-      <created>1707752697760</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1707752697760</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cl" />
-    <MESSAGE value="variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="cl" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
