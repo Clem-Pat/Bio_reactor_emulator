@@ -25,6 +25,13 @@ public class DataManagerTest {
     @Test
     public void represent_specific_time_specific_parameter() throws IOException {
         Temperature temp = new Temperature();
-        System.out.println(manager.repr("03/10/2022 18:15", temp));
+        double res = manager.repr("03/10/2022 18:15", temp);
+        System.out.println(res);
+        System.out.println(((Object) res).getClass().getName());
+
+        Oxygen ox = new Oxygen();
+        double res = manager.repr("03/10/2022 18:15", ox);
+        System.out.println(res);
+        System.out.println(((Object) res).getClass().getName());
     }
 }

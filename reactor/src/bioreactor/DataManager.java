@@ -22,16 +22,15 @@ public class DataManager {
         }
         return list;
     }
-    public String repr(String time, Variable variable) throws IOException{
+    public double repr(String time, Variable variable) throws IOException{
         String line = repr(time);
-        if (variable.type == "T"){
-            return line.substring(16, Math.min(line.length(), 26));
-        } else if (variable.type == "O2") {
-            return line.substring(26, Math.min(line.length(), 36));
-        } else if (variable.type == "Ph") {
-            return line.substring(36, Math.min(line.length(), 46));
-        }
-        return "Not a correct variable type";
+        return switch (variable.type) {
+            case "T" -> Double.parseDouble(line.substring(17, Math.min(line.length(), 26)).replace(',', '.'));
+            case "O2" -> Double.parseDouble(line.substring(27, Math.min(line.length(), 36)).replace(',', '.'));
+            case "Ph" -> Double.parseDouble(line.substring(37, Math.min(line.length(), 46)).replace(',', '.'));
+            default -> 1000000.00;
+
+        };
     }
     /**
      * Print a line at a specific time

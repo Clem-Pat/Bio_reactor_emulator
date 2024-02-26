@@ -3,13 +3,14 @@ package bioreactor;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-public class Oxygen implements IVariable, PropertyChangeListener {
+public class Oxygen extends Variable implements PropertyChangeListener {
     public String type = "O2";
 
     BioreacteurGUI myGui;
     AllData leData;// pas sur, je sousentend l'existence ultérieure d'un seule endroit pour les données
 
     public Oxygen(AllData b, BioreacteurGUI bg) {
+        type = "O";
         this.leData = b;
         this.myGui = bg;
         b.getPropertyChangeSupport().addPropertyChangeListener(this);
@@ -22,9 +23,5 @@ public class Oxygen implements IVariable, PropertyChangeListener {
         // myGui.getTexteSommeBanque().setText(String.valueOf(laBanque.getLeCompte().getSomme()));
         // System.out.println("Somme mise a jour : " + laBanque.getLeCompte().getSomme());
         // myGui.getTexteSommeDemandee().setText(arg.toString());
-    }
-
-    public void getValue(){
-
     }
 }
