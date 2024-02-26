@@ -29,9 +29,9 @@ public class DataManagerTest {
         System.out.println(res);
         System.out.println(((Object) res).getClass().getName());
 
-        Oxygen ox = new Oxygen();
-        double res = manager.repr("03/10/2022 18:15", ox);
-        System.out.println(res);
-        System.out.println(((Object) res).getClass().getName());
+//        Oxygen ox = new Oxygen();
+//        double res = manager.repr("03/10/2022 18:15", ox);
+//        System.out.println(res);
+//        System.out.println(((Object) res).getClass().getName());
     }
 }

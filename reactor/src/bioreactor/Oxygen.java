@@ -6,10 +6,10 @@ import java.beans.PropertyChangeListener;
 public class Oxygen extends Variable implements PropertyChangeListener {
     public String type = "O2";
 
-    BioreacteurGUI myGui;
+    BioreactorGUI myGui;
     AllData leData;// pas sur, je sousentend l'existence ultérieure d'un seule endroit pour les données
 
-    public Oxygen(AllData b, BioreacteurGUI bg) {
+    public Oxygen(AllData b, BioreactorGUI bg) {
         type = "O";
         this.leData = b;
         this.myGui = bg;
