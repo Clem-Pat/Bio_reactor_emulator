@@ -6,9 +6,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.net.Socket;
 
-import static javax.swing.JComponent.WHEN_FOCUSED;
-
+/**
+ * Boîte texte intelligente : lorsque l'on tape un chiffre puis qu'on fait entrée, elle demande au Client d'interroger le serveur du bioreacteur via le ClientTCP
+ *
+ */
 public class TextAreaParameter extends JTextArea{
 
     public TextAreaParameter(ClientGUI GUI, JPanel panel){
@@ -27,9 +30,9 @@ public class TextAreaParameter extends JTextArea{
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 String text = getText();
-                System.out.println(text);
                 try {
                     GUI.sendOrder(Double.parseDouble(text));
+                    System.out.println("L'utilisateur veut les données à l'instant t = " + text);
                 }catch (Exception e){
                     setText("Choix de l'instant");
                 }

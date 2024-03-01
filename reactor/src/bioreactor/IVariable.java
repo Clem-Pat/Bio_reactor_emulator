@@ -1,5 +1,5 @@
 package bioreactor;
 
 public interface IVariable {
-    public void getValue();
+    public double getValue();
 }

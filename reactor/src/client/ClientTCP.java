@@ -18,9 +18,6 @@ public class ClientTCP {
     /**
      * Création d'un nouveau {@link ClientTCP} avec un nom de serveur et un numéro
      * de port
-     *
-     * @param unNomServeur
-     * @param unNumero
      */
     public ClientTCP(String unNomServeur, int unNumero) {
         numeroPort = unNumero;
@@ -33,10 +30,10 @@ public class ClientTCP {
             socIn = new BufferedReader(new InputStreamReader(socketServeur.getInputStream()));
 
         } catch (UnknownHostException e) {
-//            System.err.println("Serveur inconnu : " + e);
+            System.out.println("Serveur inconnu : " + e);
             return false;
         } catch (Exception e) {
-//            System.err.println("Exception:  " + e);
+            System.out.println("Exception:  " + e);
             return false;
         }
         return true;
@@ -65,7 +62,9 @@ public class ClientTCP {
             }
         }
         else {
+//            On simule la connexion au serveur du Bioréacteur
             msgServeur = "0.5 4 5.6";
+            System.out.println("Reponse serveur : " + msgServeur);
         }
 
         return msgServeur;

@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DataManager {
     public static BufferedReader br;
@@ -22,36 +24,45 @@ public class DataManager {
         }
         return list;
     }
-    public double repr(String time, Variable variable) throws IOException{
-        String line = repr(time);
+    public double getVariableValueAtTime(double time, Variable variable) throws IOException{
+        String line = representLineAtTime(time);
+        List<String> lineList = Arrays.asList(line.split("\t"));
         return switch (variable.type) {
-            case "T" -> Double.parseDouble(line.substring(17, Math.min(line.length(), 26)).replace(',', '.'));
-            case "O2" -> Double.parseDouble(line.substring(27, Math.min(line.length(), 36)).replace(',', '.'));
-            case "Ph" -> Double.parseDouble(line.substring(37, Math.min(line.length(), 46)).replace(',', '.'));
+            case "T" -> Double.valueOf(lineList.get(2).replace( "," , "." ));
+            case "O2" -> Double.valueOf(lineList.get(3).replace( "," , "." ));
+            case "Ph" -> Double.valueOf(lineList.get(4).replace( "," , "." ));
             default -> 1000000.00;
-
         };
     }
     /**
      * Print a line at a specific time
      */
-    public String repr(String time) throws IOException{
+    public String representLineAtTime(double time) throws IOException{
         String line;
+        boolean begin = false;
+        double this_time = -1;
         while ((line = br.readLine())!= null){
-            String this_time = line.substring(0, Math.min(line.length(), 16));
-            if (this_time.equals(time)){
-                return line;
-            };
+            if (begin){
+                try{
+                    this_time += 1;
+                    if (this_time == time){
+                        return line;
+                    };
+                }catch (Exception e){
+                    System.out.println(e);
+                }
+            }
+            if (line.substring(0, Math.min(line.length(), 5)).equals("Temps")){begin = true;}
         }
         return "None";
     }
-    /**
-     * Print a specific line
-     */
-    public String repr(int line) throws IOException {
-        ArrayList<String> lines = get_lines();
-        return lines.get(line);
-    }
+//    /**
+//     * Print a specific line
+//     */
+//    public String repr(int line) throws IOException {
+//        ArrayList<String> lines = get_lines();
+//        return lines.get(line);
+//    }
     /**
      * Print entire file
      */

@@ -3,7 +3,8 @@ package bioreactor;
 import java.io.IOException;
 
 public class Temperature extends Variable{
-    public Temperature() throws IOException {
+    public Temperature(double t) throws IOException {
         type = "T";
+        time = t;
     }
 }
