@@ -15,5 +15,4 @@ public class MainClient {
         // Instancie l'interface graphique du client
         new ClientGUI(client);
     }
-
 }

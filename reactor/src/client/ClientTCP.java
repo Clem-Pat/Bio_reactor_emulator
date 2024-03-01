@@ -33,13 +33,12 @@ public class ClientTCP {
             socIn = new BufferedReader(new InputStreamReader(socketServeur.getInputStream()));
 
         } catch (UnknownHostException e) {
-            System.err.println("Serveur inconnu : " + e);
+//            System.err.println("Serveur inconnu : " + e);
             return false;
         } catch (Exception e) {
-            System.err.println("Exception:  " + e);
+//            System.err.println("Exception:  " + e);
             return false;
         }
-
         return true;
     }
     public void deconnexionServeur() {
@@ -55,17 +54,18 @@ public class ClientTCP {
         String msgServeur = null;
         if (connexionServeur()) {
             try {
-
                 System.out.println("Client " + uneChaine);
                 socOut.println(uneChaine);
                 socOut.flush();
-
                 msgServeur = socIn.readLine();
-                System.out.println("Client msgServeur " + msgServeur);
+                System.out.println("Reponse serveur : " + msgServeur);
 //                deconnexionServeur();
             } catch (Exception e) {
                 System.err.println("Exception:  " + e);
             }
+        }
+        else {
+            msgServeur = "0.5 4 5.6";
         }
 
         return msgServeur;

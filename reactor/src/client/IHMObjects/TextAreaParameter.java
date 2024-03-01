@@ -28,7 +28,11 @@ public class TextAreaParameter extends JTextArea{
             public void actionPerformed(ActionEvent arg0) {
                 String text = getText();
                 System.out.println(text);
-                GUI.order = Double.parseDouble(text);
+                try {
+                    GUI.sendOrder(Double.parseDouble(text));
+                }catch (Exception e){
+                    setText("Choix de l'instant");
+                }
             }
         });
     }

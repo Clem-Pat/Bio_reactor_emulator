@@ -7,18 +7,23 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class ClientGUI extends JFrame implements PropertyChangeListener {
-    public double order;
-    public ClientGUI(Client client) {
+    public List<LabelParameter> listPanelsCurrentParams;
+    public List<LabelParameter> listPanelsParams;
+    public Client client;
+    public ClientGUI(Client initClient) {
         super();
+        client = initClient;
         // On crée le client TCP
         ClientTCP serveurtcp = new ClientTCP("localhost", 6666);
 
-        // On vient ensuite "écouter" l'automate (c'est la classe ClientGUI qui va
+        // On vient ensuite "écouter" le client (c'est la classe ClientGUI qui va
         // recevoir les notifications)
         client.getPropertyChangeSupport().addPropertyChangeListener(this);
         initGUI();
@@ -44,13 +49,10 @@ public class ClientGUI extends JFrame implements PropertyChangeListener {
                     jPanelouest.add(jPanelParam, BorderLayout.NORTH);
                     jPanelParam.setLayout(new GridLayout(3, 1));
                     jPanelParam.setBackground(new java.awt.Color(255, 128, 64));
-                    {
-                        LabelParameter panelParam1 = new LabelParameter(jPanelParam, "T : ", "00 °C");
-                    }{
-                    LabelParameter panelParam2 = new LabelParameter(jPanelParam, "O : ", "00 %");
-                }{
-                    LabelParameter panelParam3 = new LabelParameter(jPanelParam, "Ph : ", "00");
-                }
+                    LabelParameter panelCurrentParam1 = new LabelParameter(jPanelParam, "T : ", "00", " °C");
+                    LabelParameter panelCurrentParam2 = new LabelParameter(jPanelParam, "O : ", "00", " %");
+                    LabelParameter panelCurrentParam3 = new LabelParameter(jPanelParam, "Ph : ", "00", "");
+                    listPanelsCurrentParams = Arrays.asList(panelCurrentParam1, panelCurrentParam2, panelCurrentParam3);
                 }
                 JPanel jPanelest = new JPanel();
                 getContentPane().add(jPanelest, BorderLayout.EAST);
@@ -77,13 +79,10 @@ public class ClientGUI extends JFrame implements PropertyChangeListener {
                     jPanelest.add(jPanelParam, BorderLayout.NORTH);
                     jPanelParam.setLayout(new GridLayout(3, 2));
                     jPanelParam.setBackground(new java.awt.Color(255, 128, 128));
-                    {
-                        LabelParameter panelParam1 = new LabelParameter(jPanelParam, "T : ", "00 °C");
-                    }{
-                    LabelParameter panelParam2 = new LabelParameter(jPanelParam, "O : ", "00 %");
-                }{
-                    LabelParameter panelParam3 = new LabelParameter(jPanelParam, "Ph : ", "00");
-                }
+                    LabelParameter panelParam1 = new LabelParameter(jPanelParam, "T : ", "00", " °C");
+                    LabelParameter panelParam2 = new LabelParameter(jPanelParam, "O : ", "00", " %");
+                    LabelParameter panelParam3 = new LabelParameter(jPanelParam, "Ph : ", "00", "");
+                    listPanelsParams = Arrays.asList(panelParam1, panelParam2, panelParam3);
                 }
             }
             pack();
@@ -91,12 +90,27 @@ public class ClientGUI extends JFrame implements PropertyChangeListener {
             e.printStackTrace();
         }
     }
+    public void sendOrder(double timeValue) {
+        List<Double> params = client.askParamsAtTime(timeValue);
+        updateParamsPanel(params);
+    }
+
+    private void updateParamsPanel(List<Double> params) {
+        for (int i=0; i < params.size(); i++){
+            try{
+                listPanelsParams.get(i).setValue(String.valueOf(params.get(i)));
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
+    }
+
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-//        if (evt.getSource() instanceof Automate) {
-//            if (evt.getPropertyName().equals("sommePoche")) {
-//                jTextFieldSommenpoche.setText(Integer.toString(((Automate) evt.getSource()).getSommePoche()));
-//            }
-//        }
+        System.out.println(evt);
+        List<Double> params = client.getCurrentParams();
+        listPanelsCurrentParams.get(0).setValue(Double.toString(params.get(0)));
+        listPanelsCurrentParams.get(0).setValue(Double.toString(params.get(0)));
+        listPanelsCurrentParams.get(0).setValue(Double.toString(params.get(0)));
     }
 }
