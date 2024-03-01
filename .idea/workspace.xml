@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="DataManager">
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/BioreactorGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/MainBioreactor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/client/ClientGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/client/ClientTCP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/client/MainClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/client/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/client/IHMObjects/LabelParameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactor/src/client/IHMObjects/TextAreaParameter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/BioreacteurGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/Oxygen.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Oxygen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/tests/DataManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/tests/DataManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/BioreactorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/BioreactorGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/client/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/client/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/client/MainClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +121,7 @@
       <updated>1707751805170</updated>
       <workItem from="1707751806293" duration="6061000" />
       <workItem from="1708346455810" duration="5490000" />
-      <workItem from="1708951040213" duration="6558000" />
+      <workItem from="1708951040213" duration="13022000" />
     </task>
     <task id="LOCAL-00001" summary="cl">
       <option name="closed" value="true" />
@@ -165,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708951631128</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="DataManager">
+      <option name="closed" value="true" />
+      <created>1708960259003</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708960259003</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

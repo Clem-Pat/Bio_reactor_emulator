@@ -11,9 +11,9 @@ public class MainClient {
      * @param args
      */
     public static void main(String[] args) {
+        Client client = new Client();
         // Instancie l'interface graphique du client
-        new ClientGUI();
-        System.out.println("attente interface graphique");
+        new ClientGUI(client);
     }
 
 }
