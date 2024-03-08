@@ -1,6 +1,6 @@
 package bioreactor;
 
-import client.ClientGUI;
+import java.io.IOException;
 /**
  * Contient la méthode main()
  *
@@ -12,9 +12,10 @@ public class MainBioreactor {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Instancie l'interface graphique du client
-        new BioreactorGUI();
+        BioreactorSimulator reactor = new BioreactorSimulator();
+        new BioreactorGUI(reactor);
         System.out.println("attente interface graphique");
     }
 }
