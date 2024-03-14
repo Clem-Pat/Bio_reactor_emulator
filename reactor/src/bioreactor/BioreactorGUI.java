@@ -6,11 +6,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BioreactorGUI extends JFrame implements PropertyChangeListener {
-    public double order;
     public List<LabelParameter> listPanelsCurrentParams;
     public BioreactorSimulator reactor;
     public BioreactorGUI(BioreactorSimulator initReactor) {
@@ -19,7 +22,7 @@ public class BioreactorGUI extends JFrame implements PropertyChangeListener {
         ServeurTCP serveurtcp = new ServeurTCP(6666);
         // On vient ensuite "écouter" l'automate (c'est la classe ClientGUI qui va
         // recevoir les notifications)
-//        automate.getPropertyChangeSupport().addPropertyChangeListener(this);
+        reactor.getPropertyChangeSupport().addPropertyChangeListener(this);
         initGUI();
     }
     private void initGUI() {
@@ -52,10 +55,9 @@ public class BioreactorGUI extends JFrame implements PropertyChangeListener {
     }
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        System.out.println(evt);
-        List<Variable> params = reactor.getCurrentParams();
-        listPanelsCurrentParams.get(0).setValue(Double.toString(params.get(0).getValue()));
-        listPanelsCurrentParams.get(1).setValue(Double.toString(params.get(1).getValue()));
-//        listPanelsCurrentParams.get(2).setValue(Double.toString(params.get(2).getValue()));
+        Object newValue = evt.getNewValue();
+        listPanelsCurrentParams.get(0).setValue(Double.toString(((Variable) ((List<?>) newValue).get(0)).getValue()));
+        listPanelsCurrentParams.get(2).setValue(Double.toString(((Variable) ((List<?>) newValue).get(1)).getValue()));
+        listPanelsCurrentParams.get(1).setValue(Double.toString(((Variable) ((List<?>) newValue).get(2)).getValue()));
     }
 }

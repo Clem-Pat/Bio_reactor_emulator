@@ -28,7 +28,7 @@ public class ClientTCP {
             socketServeur = new Socket(nomServeur, numeroPort);
             socOut = new PrintStream(socketServeur.getOutputStream());
             socIn = new BufferedReader(new InputStreamReader(socketServeur.getInputStream()));
-
+            return true;
         } catch (UnknownHostException e) {
             System.out.println("Serveur inconnu : " + e);
             return false;
@@ -36,7 +36,6 @@ public class ClientTCP {
             System.out.println("Exception:  " + e);
             return false;
         }
-        return true;
     }
     public void deconnexionServeur() {
         try {
@@ -56,7 +55,7 @@ public class ClientTCP {
                 socOut.flush();
                 msgServeur = socIn.readLine();
                 System.out.println("Reponse serveur : " + msgServeur);
-//                deconnexionServeur();
+                deconnexionServeur();
             } catch (Exception e) {
                 System.err.println("Exception:  " + e);
             }

@@ -28,14 +28,11 @@ public class ServeurTCP extends Thread {
         numeroPort = unNumeroPort;
         maxConnexions = 10;
     }
-
     public ServeurTCP(IContext b, IProtocole p, int port) {
         this(port);
         contexte = b;
         protocole = p;
     }
-
-
     @Override
     public String toString() {
         return "[ServeurTCP] Port : " + numeroPort + ", Contexte: " + contexte;
@@ -73,6 +70,12 @@ public class ServeurTCP extends Thread {
             System.out.println("Could not close");
         }
 
+    }
+    public IProtocole getProtocole() {
+        return protocole;
+    }
+    public IContext getContexte() {
+        return contexte;
     }
 
 }

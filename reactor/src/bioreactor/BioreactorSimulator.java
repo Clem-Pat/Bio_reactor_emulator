@@ -23,7 +23,7 @@ public class BioreactorSimulator {
     public DataManager data; //Change data file address
     public int currentNumberOfTicks = 0;
     Variable currentTemperature = new Temperature(currentNumberOfTicks);
-    //        Variable currentOxygen = new Oxygen(currentNumberOfTicks);
+    Variable currentOxygen = new Oxygen(currentNumberOfTicks);
     Variable currentPh = new Ph(currentNumberOfTicks);
     List<Variable> listPreviousTemperature = new ArrayList<Variable>();
     List<Variable> listPreviousOxygen = new ArrayList<Variable>();
@@ -59,19 +59,17 @@ public class BioreactorSimulator {
         currentNumberOfTicks += 1;
         currentTemperature.setTimeAndValue(currentNumberOfTicks, (double) data.getVariableValueAtTime(currentNumberOfTicks, currentTemperature));
         currentPh.setTimeAndValue(currentNumberOfTicks, (double) data.getVariableValueAtTime(currentNumberOfTicks, currentPh));
-//        currentO2.setTimeAndValue(currentNumberOfTicks, (double) data.getVariableValueAtTime(currentNumberOfTicks, "T"));
+        currentOxygen.setTimeAndValue(currentNumberOfTicks, (double) data.getVariableValueAtTime(currentNumberOfTicks, currentOxygen));
         listPreviousTemperature.add(currentTemperature);
         listPreviousPh.add(currentTemperature);
-//        listPreviousO2.add(currentTemperature);
-        reloadCurrentParam(Arrays.asList(currentTemperature, currentPh));
-    }
-    public List<Variable> getCurrentParams() {
-        return currentParams;
+        listPreviousOxygen.add(currentTemperature);
+        reloadCurrentParam(Arrays.asList(currentTemperature, currentPh, currentOxygen));
     }
     public void reloadCurrentParam(List<Variable> newParams) {
-        System.out.println("Changed params");
-        List<Variable> oldParams = currentParams;
         currentParams = newParams;
-        pcSupport.firePropertyChange("currentParams", oldParams, currentParams);
+        pcSupport.firePropertyChange("currentParams", null, newParams);
+    }
+    public PropertyChangeSupport getPropertyChangeSupport() {
+        return pcSupport;
     }
 }
