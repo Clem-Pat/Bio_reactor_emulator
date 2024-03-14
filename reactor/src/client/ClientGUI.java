@@ -25,7 +25,7 @@ public class ClientGUI extends JFrame implements PropertyChangeListener {
         super();
         client = initClient;
         // On crée le client TCP
-        ClientTCP serveurtcp = new ClientTCP("localhost", 6666);
+//        ClientTCP serveurtcp = new ClientTCP("localhost", 7777);
 
         // On vient ensuite "écouter" le client (c'est la classe ClientGUI qui va
         // recevoir les notifications)
@@ -94,7 +94,7 @@ public class ClientGUI extends JFrame implements PropertyChangeListener {
             e.printStackTrace();
         }
     }
-    public void sendOrder(double timeValue) {
+    public void sendOrder(int timeValue) {
         List<Double> params = client.askParamsAtTime(timeValue);
         updateParamsPanel(params);
     }

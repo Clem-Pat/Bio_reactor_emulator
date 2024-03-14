@@ -12,32 +12,25 @@ import java.net.Socket;
 public class ServeurTCP extends Thread {
 
     private static int nbConnexions = 0;
-
     /** Maximum de connexions client autorisées */
     private int maxConnexions;
-
     private Socket clientSocket;
-
     private IContext contexte;
-
     private IProtocole protocole;
-
     private int numeroPort;
+    private BioreactorSimulator reactorCaller;
 
-    public ServeurTCP(int unNumeroPort) {
+    public ServeurTCP(int unNumeroPort, BioreactorSimulator reactor) {
         numeroPort = unNumeroPort;
         maxConnexions = 10;
+        reactorCaller = reactor;
+        start();
     }
-    public ServeurTCP(IContext b, IProtocole p, int port) {
-        this(port);
+    public ServeurTCP(IContext b, IProtocole p, int port, BioreactorSimulator reactor) {
+        this(port, reactor);
         contexte = b;
         protocole = p;
     }
-    @Override
-    public String toString() {
-        return "[ServeurTCP] Port : " + numeroPort + ", Contexte: " + contexte;
-    }
-
     /* l'ancienne methode go est remplacee par run */
     @Override
     public void run() {
@@ -55,11 +48,13 @@ public class ServeurTCP extends Thread {
                 System.out.println(" Attente du serveur pour la communication d'un client ");
                 clientSocket = serverSocket.accept();
                 nbConnexions++;
-                System.out.println("Nb automates : " + nbConnexions);
+                System.out.println("Nb de clients : " + nbConnexions);
             } catch (IOException e) {
                 System.out.println("Accept failed: " + serverSocket.getLocalPort() + ", " + e);
                 System.exit(1);
             }
+            ServeurSpecifique st = new ServeurSpecifique(clientSocket, this);
+            st.start();
         }
         System.out.println("Deja " + nbConnexions + " clients. Maximum autorisé atteint");
 
@@ -70,6 +65,9 @@ public class ServeurTCP extends Thread {
             System.out.println("Could not close");
         }
 
+    }
+    public BioreactorSimulator getBioreactor(){
+        return reactorCaller;
     }
     public IProtocole getProtocole() {
         return protocole;

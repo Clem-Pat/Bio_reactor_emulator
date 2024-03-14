@@ -4,15 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="Début de création du simulateur Bioréacteur">
-      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Oxygen_Victor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="Réparation du temps réel (toujours sale, avec CurrentTemperature, currentO2, ...)&#10;+ Début liaison TCP, n'arrive pas à se connecter">
+      <change afterPath="$PROJECT_DIR$/reactor/src/bioreactor/ServeurSpecifique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorSimulator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorSimulator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorSimulator$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorSimulator$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorSimulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorSimulator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/ServeurTCP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/ServeurTCP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/ClientGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/IHMObjects/TextAreaParameter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/IHMObjects/TextAreaParameter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/BioreactorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/BioreactorGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/BioreactorSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/BioreactorSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/Oxygen.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Oxygen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/ServeurTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/ServeurTCP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/client/ClientTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/client/ClientTCP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/client/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/client/IHMObjects/TextAreaParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/client/IHMObjects/TextAreaParameter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +135,7 @@
       <workItem from="1708346455810" duration="5490000" />
       <workItem from="1708951040213" duration="33200000" />
       <workItem from="1709837236083" duration="14632000" />
-      <workItem from="1710432973567" duration="5650000" />
+      <workItem from="1710432973567" duration="10243000" />
     </task>
     <task id="LOCAL-00001" summary="cl">
       <option name="closed" value="true" />
@@ -201,7 +209,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709334141610</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Réparation du temps réel (toujours sale, avec CurrentTemperature, currentO2, ...)&#10;+ Début liaison TCP, n'arrive pas à se connecter">
+      <option name="closed" value="true" />
+      <created>1710438843648</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710438843648</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Réparation du temps réel (toujours sale, avec CurrentTemperature, currentO2, ...)&#10;+ Début liaison TCP, n'arrive pas à se connecter">
+      <option name="closed" value="true" />
+      <created>1710438978210</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710438978210</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +248,8 @@
     <MESSAGE value="DataManager" />
     <MESSAGE value="Client TCP and Client GUI updating done" />
     <MESSAGE value="Début de création du simulateur Bioréacteur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début de création du simulateur Bioréacteur" />
+    <MESSAGE value="Réparation du temps réel (toujours sale, avec CurrentTemperature, currentO2, ...)&#10;+ Début liaison TCP, n'arrive pas à se connecter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Réparation du temps réel (toujours sale, avec CurrentTemperature, currentO2, ...)&#10;+ Début liaison TCP, n'arrive pas à se connecter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

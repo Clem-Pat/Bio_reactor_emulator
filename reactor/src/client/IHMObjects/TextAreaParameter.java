@@ -29,11 +29,9 @@ public class TextAreaParameter extends JTextArea{
         actionMap.put(enterStroke.toString(), new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                String text = getText();
                 try {
-                    GUI.sendOrder(Double.parseDouble(text));
-                    System.out.println("L'utilisateur veut les données à l'instant t = " + text);
-                }catch (Exception e){
+                    GUI.sendOrder(Integer.parseInt(getText()));
+                }catch (NumberFormatException e){
                     setText("Choix de l'instant");
                 }
             }

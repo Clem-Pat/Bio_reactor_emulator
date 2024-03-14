@@ -18,8 +18,6 @@ public class BioreactorGUI extends JFrame implements PropertyChangeListener {
     public BioreactorSimulator reactor;
     public BioreactorGUI(BioreactorSimulator initReactor) {
         reactor = initReactor;
-        // On crée le serveur TCP
-        ServeurTCP serveurtcp = new ServeurTCP(6666);
         // On vient ensuite "écouter" l'automate (c'est la classe ClientGUI qui va
         // recevoir les notifications)
         reactor.getPropertyChangeSupport().addPropertyChangeListener(this);

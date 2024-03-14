@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class Client {
     public final PropertyChangeSupport pcSupport;
     public List<Double> currentParams;
-    private int port = 6665;
+    private int port = 7777;
     private ClientTCP monClientTCP;
     public Client() {
         super();
@@ -27,8 +27,8 @@ public class Client {
     public List<Double> getCurrentParams(){
         return currentParams;
     }
-    public List<Double> askParamsAtTime(double timeOrder){
-        String TransmittedParams = monClientTCP.transmettreChaine("update " + Double.toString(timeOrder));
+    public List<Double> askParamsAtTime(int timeOrder){
+        String TransmittedParams = monClientTCP.transmettreChaine("update " + Integer.toString(timeOrder));
         String[] paramsStrings = TransmittedParams.split(" ");
         List<Double> paramDouble = convertStringListTodoubleList(Arrays.asList(paramsStrings), Double::parseDouble);
         return paramDouble;
