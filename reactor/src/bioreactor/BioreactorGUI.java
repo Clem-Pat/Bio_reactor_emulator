@@ -23,7 +23,7 @@ public class BioreactorGUI extends JFrame implements PropertyChangeListener {
     private void initGUI() {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.setVisible(true);
-        this.setTitle("Client");
+        this.setTitle("Bioreactor");
         {
             JPanel jPanel = new JPanel();
             getContentPane().add(jPanel, BorderLayout.WEST);

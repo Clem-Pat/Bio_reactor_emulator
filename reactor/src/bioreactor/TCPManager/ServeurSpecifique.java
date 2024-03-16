@@ -20,7 +20,6 @@ class ServeurSpecifique extends Thread {
 
     public ServeurSpecifique(Socket uneSocket, ServeurTCP unServeur) {
         super("ServeurThread");
-
         clientSocket = uneSocket;
         monServeur = unServeur;
     }
@@ -35,20 +34,16 @@ class ServeurSpecifique extends Thread {
             System.out.println("Serveur avec  Client ");
 
             if ((inputReq = is.readLine()) != null) {
-                System.out.println(" Msg Recu " + inputReq);
                 String[] chaines = inputReq.split(" ");
-                System.out.println(" Ordre Recu " + chaines[0]);
                 if (chaines[0].contentEquals("get")) {
                     int valeur = Integer.parseInt(chaines[1]);
-                    if (valeur > 0){
-                        System.out.println(" parametres demandés à " + valeur);
-                        List<Double> parametersToSend = monServeur.getBioreactor().getParametersAtTime(valeur);
-                        sendAnswer("get ", os, parametersToSend);
-                    }
+                    System.out.println(" parametres demandés à " + valeur);
+                    List<Double> parametersToSend = monServeur.getBioreactor().getParametersAtTime(valeur);
+                    sendAnswer("get ", os, parametersToSend);
                 }
                 if (chaines[0].contentEquals("update")) {
                     System.out.println(" derniers paramètres demandés ");
-                    List<Double> parametersToSend = monServeur.getBioreactor().getCurrentParameters();
+                    List<Double> parametersToSend = monServeur.getBioreactor().getCurrentVariablesValues();
                     sendAnswer("update ", os, parametersToSend);
                 }
             }

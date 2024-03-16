@@ -10,8 +10,4 @@ public class Variable implements IVariable{
     @Override
     public Double getTime(){ return time;}
     public void setTime(double t){ time = t;}
-    public void setTimeAndValue(double t, double val) {
-        setTime(t);
-        setValue(val);
-    }
 }

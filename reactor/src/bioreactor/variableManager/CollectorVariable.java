@@ -3,7 +3,7 @@ package bioreactor.variableManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListVariable implements IVariable{
+public class CollectorVariable implements IVariable{
     public List<Variable> variables = new ArrayList<>();
     @Override
     public ArrayList<Double> getValue() {
@@ -21,12 +21,29 @@ public class ListVariable implements IVariable{
         }
         return res;
     }
-    public double findVariableValueAtTime(double t){
+    public void add(Variable V) {
+        variables.add(V);
+    }
+    public Variable get(double t) {
+        for (Variable variable : variables){
+            if (variable.getTime() == t){
+                return variable;
+            }
+        }
+        return null;
+    }
+    public Double getValueAtTime(double t){
         for (Variable variable : variables){
             if (variable.getTime() == t){
                 return variable.getValue();
             }
         }
-        return Double.parseDouble(null);
+        return null;
+    }
+    public Integer size(){
+        return variables.size();
+    }
+    public Variable getLastVariable(){
+        return variables.get(variables.size() - 1);
     }
 }

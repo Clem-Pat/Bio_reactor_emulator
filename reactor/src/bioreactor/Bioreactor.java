@@ -2,10 +2,7 @@ package bioreactor;
 
 import bioreactor.DataManager.DataManager;
 import bioreactor.TCPManager.ServeurTCP;
-import bioreactor.variableManager.Oxygen;
-import bioreactor.variableManager.Ph;
-import bioreactor.variableManager.Temperature;
-import bioreactor.variableManager.Variable;
+import bioreactor.variableManager.*;
 
 import java.beans.PropertyChangeSupport;
 import java.io.IOException;
@@ -24,78 +21,64 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class Bioreactor {
     public final PropertyChangeSupport pcSupport;
     public DataManager data; //Change data file address
-    public int currentNumberOfTicks = 0;
-    Variable currentTemperature = new Temperature(currentNumberOfTicks);
-    Variable currentOxygen = new Oxygen(currentNumberOfTicks);
-    Variable currentPh = new Ph(currentNumberOfTicks);
-    public static Dictionary listPreviousTemperature = new Hashtable<Double, Double>();
-    public static Dictionary listPreviousOxygen = new Hashtable<Double, Double>();
-    public static Dictionary listPreviousPh = new Hashtable<Double, Double>();
+    public int currentNumberOfTicks = -1;
+    public List<CollectorVariable> listPreviousVariables = new ArrayList<>();
     public int tf = 30; //time in minutes of end of simulator
     public int tick = 2;    //call setUpdateValues every tick seconds
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-    private List<Variable> currentParams;
 
     public Bioreactor() throws IOException {
         data = new DataManager(null);
         ServeurTCP serveurtcp = new ServeurTCP(7777, this);
         pcSupport = new PropertyChangeSupport(this);
+        for (String type : data.variablesTypesToConsider){
+            listPreviousVariables.add(new CollectorVariable());    // listPreviousVariables = [CollectorVariable listPreviousTemperature, CollectorVariable listPreviousOxygen, CollectorVariable listPreviousPh]
+        }
         init();
     }
     public void init(){
         final Runnable updater = new Runnable() {
             @Override
             public void run() {
-                try {
-                    setUpdateValues();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                setUpdateValues();
             };
         };
         final ScheduledFuture<?> bioreactorHandler =
                 scheduler.scheduleAtFixedRate(updater, tick, tick, SECONDS); // Calls setUpdateValues() every "tick" seconds
         scheduler.schedule(new Runnable() {             //Stops calling setUpdateValues() after one hour of simulation.
             public void run() { bioreactorHandler.cancel(true); }
-        }, tf*60, SECONDS);
+        }, tf*60L, SECONDS);
     }
-    public void setUpdateValues() throws IOException {
+    public void setUpdateValues() {
         currentNumberOfTicks += 1;
-        Double temperatureValue = (Double) data.getVariableValueAtTime(currentNumberOfTicks, currentTemperature);
-        Double PhValue = (Double) data.getVariableValueAtTime(currentNumberOfTicks, currentPh);
-        Double OxygenValue = (Double) data.getVariableValueAtTime(currentNumberOfTicks, currentOxygen);
-        currentTemperature.setTimeAndValue(currentNumberOfTicks, temperatureValue);
-        currentPh.setTimeAndValue(currentNumberOfTicks, PhValue);
-        currentOxygen.setTimeAndValue(currentNumberOfTicks, OxygenValue);
-        listPreviousTemperature.put(currentNumberOfTicks, new Temperature(currentNumberOfTicks, temperatureValue));
-        listPreviousPh.put(currentNumberOfTicks, new Ph(currentNumberOfTicks, PhValue));
-        listPreviousOxygen.put(currentNumberOfTicks, new Oxygen(currentNumberOfTicks, OxygenValue));
-        reloadCurrentParam(Arrays.asList(currentTemperature, currentPh, currentOxygen));
+        for (int i = 0; i < data.variablesTypesToConsider.size(); i++){
+            data.addVariableToCollector(this,i,currentNumberOfTicks);
+        }
+        reloadCurrentParam();
     }
-    public Object getVariableValueAtTime(double t, Variable variable){
-        return switch (variable.type) {
-            case "T" -> listPreviousTemperature.get(t);
-            case "O2" -> listPreviousOxygen.get(t);
-            case "Ph" -> listPreviousPh.get(t);
-            default -> 1000000.00;
-        };
-    }
-    public List<Double> getCurrentParameters(){
+    public List<Double> getCurrentVariablesValues(){
         List<Double> res = new ArrayList<>();
-        for (int i = 0; i<currentParams.toArray().length; i++){
-            res.add(currentParams.get(i).getValue());
+        for (int i = 0; i < listPreviousVariables.size(); i++){
+            res.add(listPreviousVariables.get(i).getLastVariable().getValue());
         }
         return res;
     }
     public List<Double> getParametersAtTime(int t){
-        if (t>0 && t<=listPreviousTemperature.size()){
-            return  Arrays.asList(((Variable) listPreviousTemperature.get(t)).getValue(), ((Variable) listPreviousOxygen.get(t)).getValue(), ((Variable) listPreviousPh.get(t)).getValue());
+        if (t>0 && t <= listPreviousVariables.get(0).getLastVariable().getTime()){
+            List<Double> res = new ArrayList<>();
+            for (int i = 0; i < listPreviousVariables.size(); i++){
+                res.add(listPreviousVariables.get(i).getValueAtTime(t));
+            }
+            return res;
         }
         return Arrays.asList(0.,0.,0.);
     }
-    public void reloadCurrentParam(List<Variable> newParams) {
-        currentParams = newParams;
-        pcSupport.firePropertyChange("currentParams", null, newParams);
+    public void reloadCurrentParam() {
+        List<Variable> res = new ArrayList<>();
+        for (int i = 0; i < listPreviousVariables.size(); i++){
+            res.add(listPreviousVariables.get(i).getLastVariable());
+        }
+        pcSupport.firePropertyChange("currentParams", null, res);
     }
     public PropertyChangeSupport getPropertyChangeSupport() {
         return pcSupport;
