@@ -1,4 +1,6 @@
-package bioreactor;
+package bioreactor.DataManager;
+
+import bioreactor.variableManager.Variable;
 
 import java.io.File;
 import java.io.IOException;

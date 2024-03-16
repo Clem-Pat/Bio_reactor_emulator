@@ -1,5 +1,12 @@
 package bioreactor;
 
+import bioreactor.DataManager.DataManager;
+import bioreactor.TCPManager.ServeurTCP;
+import bioreactor.variableManager.Oxygen;
+import bioreactor.variableManager.Ph;
+import bioreactor.variableManager.Temperature;
+import bioreactor.variableManager.Variable;
+
 import java.beans.PropertyChangeSupport;
 import java.io.IOException;
 import java.util.*;
@@ -14,7 +21,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
  * Il va stocker la valeur actuelle de la temp, O2, Ph ainsi que les valeurs précédentes (dans des listes)
  * Il va actualiser les valeurs des variables à chaque tic de la simulation cad toutes les 3 secondes (t1 = t0 + 3sec => donne currentTime = 1)
  */
-public class BioreactorSimulator {
+public class Bioreactor {
     public final PropertyChangeSupport pcSupport;
     public DataManager data; //Change data file address
     public int currentNumberOfTicks = 0;
@@ -24,12 +31,12 @@ public class BioreactorSimulator {
     public static Dictionary listPreviousTemperature = new Hashtable<Double, Double>();
     public static Dictionary listPreviousOxygen = new Hashtable<Double, Double>();
     public static Dictionary listPreviousPh = new Hashtable<Double, Double>();
-    public int tf = 10; //time in minutes of end of simulator
-    public int tick = 2;//call setUpdateValues every tick seconds
+    public int tf = 30; //time in minutes of end of simulator
+    public int tick = 2;    //call setUpdateValues every tick seconds
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private List<Variable> currentParams;
 
-    public BioreactorSimulator() throws IOException {
+    public Bioreactor() throws IOException {
         data = new DataManager(null);
         ServeurTCP serveurtcp = new ServeurTCP(7777, this);
         pcSupport = new PropertyChangeSupport(this);
@@ -47,19 +54,22 @@ public class BioreactorSimulator {
             };
         };
         final ScheduledFuture<?> bioreactorHandler =
-                scheduler.scheduleAtFixedRate(updater, 2, 2, SECONDS); // Calls setUpdateValues() every "tick" seconds
+                scheduler.scheduleAtFixedRate(updater, tick, tick, SECONDS); // Calls setUpdateValues() every "tick" seconds
         scheduler.schedule(new Runnable() {             //Stops calling setUpdateValues() after one hour of simulation.
             public void run() { bioreactorHandler.cancel(true); }
-        }, 10*60, SECONDS);
+        }, tf*60, SECONDS);
     }
     public void setUpdateValues() throws IOException {
         currentNumberOfTicks += 1;
-        currentTemperature.setTimeAndValue(currentNumberOfTicks, (double) data.getVariableValueAtTime(currentNumberOfTicks, currentTemperature));
-        currentPh.setTimeAndValue(currentNumberOfTicks, (double) data.getVariableValueAtTime(currentNumberOfTicks, currentPh));
-        currentOxygen.setTimeAndValue(currentNumberOfTicks, (double) data.getVariableValueAtTime(currentNumberOfTicks, currentOxygen));
-        listPreviousTemperature.put(currentNumberOfTicks, currentTemperature);
-        listPreviousPh.put(currentNumberOfTicks, currentPh);
-        listPreviousOxygen.put(currentNumberOfTicks, currentOxygen);
+        Double temperatureValue = (Double) data.getVariableValueAtTime(currentNumberOfTicks, currentTemperature);
+        Double PhValue = (Double) data.getVariableValueAtTime(currentNumberOfTicks, currentPh);
+        Double OxygenValue = (Double) data.getVariableValueAtTime(currentNumberOfTicks, currentOxygen);
+        currentTemperature.setTimeAndValue(currentNumberOfTicks, temperatureValue);
+        currentPh.setTimeAndValue(currentNumberOfTicks, PhValue);
+        currentOxygen.setTimeAndValue(currentNumberOfTicks, OxygenValue);
+        listPreviousTemperature.put(currentNumberOfTicks, new Temperature(currentNumberOfTicks, temperatureValue));
+        listPreviousPh.put(currentNumberOfTicks, new Ph(currentNumberOfTicks, PhValue));
+        listPreviousOxygen.put(currentNumberOfTicks, new Oxygen(currentNumberOfTicks, OxygenValue));
         reloadCurrentParam(Arrays.asList(currentTemperature, currentPh, currentOxygen));
     }
     public Object getVariableValueAtTime(double t, Variable variable){
@@ -70,9 +80,18 @@ public class BioreactorSimulator {
             default -> 1000000.00;
         };
     }
-    public List<Object> getParametersAtTime(int t){
-        System.out.println(listPreviousTemperature);
-        return  Arrays.asList(((Variable) listPreviousTemperature.get(t)).getValue(), ((Variable) listPreviousOxygen.get(t)).getValue(), ((Variable) listPreviousPh.get(t)).getValue());
+    public List<Double> getCurrentParameters(){
+        List<Double> res = new ArrayList<>();
+        for (int i = 0; i<currentParams.toArray().length; i++){
+            res.add(currentParams.get(i).getValue());
+        }
+        return res;
+    }
+    public List<Double> getParametersAtTime(int t){
+        if (t>0 && t<=listPreviousTemperature.size()){
+            return  Arrays.asList(((Variable) listPreviousTemperature.get(t)).getValue(), ((Variable) listPreviousOxygen.get(t)).getValue(), ((Variable) listPreviousPh.get(t)).getValue());
+        }
+        return Arrays.asList(0.,0.,0.);
     }
     public void reloadCurrentParam(List<Variable> newParams) {
         currentParams = newParams;

@@ -1,4 +1,4 @@
-package bioreactor;
+package bioreactor.TCPManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,27 +38,33 @@ class ServeurSpecifique extends Thread {
                 System.out.println(" Msg Recu " + inputReq);
                 String[] chaines = inputReq.split(" ");
                 System.out.println(" Ordre Recu " + chaines[0]);
-                if (chaines[0].contentEquals("update")) {
+                if (chaines[0].contentEquals("get")) {
                     int valeur = Integer.parseInt(chaines[1]);
-                    if (valeur >= 0){
+                    if (valeur > 0){
                         System.out.println(" parametres demandés à " + valeur);
-                        List<Object> parametersAtTime = monServeur.getBioreactor().getParametersAtTime(valeur);
-                        String reponse = "";
-                        for (int i = 0; i<parametersAtTime.toArray().length; i++){
-                            reponse += parametersAtTime.get(i) + " ";
-                        }
-                        System.out.println("Réponse du serveur : " + reponse);
-                        os.println(reponse);
+                        List<Double> parametersToSend = monServeur.getBioreactor().getParametersAtTime(valeur);
+                        sendAnswer("get ", os, parametersToSend);
                     }
+                }
+                if (chaines[0].contentEquals("update")) {
+                    System.out.println(" derniers paramètres demandés ");
+                    List<Double> parametersToSend = monServeur.getBioreactor().getCurrentParameters();
+                    sendAnswer("update ", os, parametersToSend);
                 }
             }
             clientSocket.close();
             os.close();
             is.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    private void sendAnswer(String initialOrder, PrintStream os, List<Double> parametersToSend){
+        String reponse = initialOrder;
+        for (int i = 0; i<parametersToSend.toArray().length; i++){
+            reponse += parametersToSend.get(i) + " ";
+        }
+        System.out.println("Réponse du serveur : " + reponse);
+        os.println(reponse);
+    }
 }

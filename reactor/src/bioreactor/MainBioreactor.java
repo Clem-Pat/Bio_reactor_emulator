@@ -14,9 +14,8 @@ public class MainBioreactor {
      */
     public static void main(String[] args) throws IOException {
         // Instancie l'interface graphique du client
-        BioreactorSimulator reactor = new BioreactorSimulator();
+        Bioreactor reactor = new Bioreactor();
         new BioreactorGUI(reactor);
-        System.out.println("attente interface graphique");
     }
 }
 

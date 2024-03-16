@@ -7,7 +7,6 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.net.Socket;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,9 +23,6 @@ public class ClientGUI extends JFrame implements PropertyChangeListener {
     public ClientGUI(Client initClient) {
         super();
         client = initClient;
-        // On crée le client TCP
-//        ClientTCP serveurtcp = new ClientTCP("localhost", 7777);
-
         // On vient ensuite "écouter" le client (c'est la classe ClientGUI qui va
         // recevoir les notifications)
         client.getPropertyChangeSupport().addPropertyChangeListener(this);
@@ -111,10 +107,9 @@ public class ClientGUI extends JFrame implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        System.out.println(evt);
-        List<Double> params = client.getCurrentParams();
-        listPanelsCurrentParams.get(0).setValue(Double.toString(params.get(0)));
-        listPanelsCurrentParams.get(0).setValue(Double.toString(params.get(0)));
-        listPanelsCurrentParams.get(0).setValue(Double.toString(params.get(0)));
+        Object newValue = evt.getNewValue();
+        listPanelsCurrentParams.get(0).setValue(Double.toString((double) ((List<?>) newValue).get(0)));
+        listPanelsCurrentParams.get(2).setValue(Double.toString((double) ((List<?>) newValue).get(1)));
+        listPanelsCurrentParams.get(1).setValue(Double.toString((double) ((List<?>) newValue).get(2)));
     }
 }

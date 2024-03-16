@@ -95,7 +95,6 @@ public class ClientTCP {
     public String transmettreChaineConnexionPonctuelle(String uneChaine) {
         String msgServeur = null;
         String chaineRetour = "";
-        System.out.println("\nClient connexionTransmettreChaine " + uneChaine);
         if (connecterAuServeur() == true) {
             try {
                 socOut.println(uneChaine);

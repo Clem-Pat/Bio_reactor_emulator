@@ -1,24 +1,21 @@
 package bioreactor;
 
+import bioreactor.variableManager.Variable;
 import client.IHMObjects.LabelParameter;
 
 import javax.swing.*;
 import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class BioreactorGUI extends JFrame implements PropertyChangeListener {
     public List<LabelParameter> listPanelsCurrentParams;
-    public BioreactorSimulator reactor;
-    public BioreactorGUI(BioreactorSimulator initReactor) {
+    public Bioreactor reactor;
+    public BioreactorGUI(Bioreactor initReactor) {
         reactor = initReactor;
-        // On vient ensuite "écouter" l'automate (c'est la classe ClientGUI qui va
+        // On vient ensuite "écouter" le réacteur (c'est la classe BioreactorGUI qui va
         // recevoir les notifications)
         reactor.getPropertyChangeSupport().addPropertyChangeListener(this);
         initGUI();

@@ -1,4 +1,6 @@
-package bioreactor;
+package bioreactor.TCPManager;
+
+import bioreactor.Bioreactor;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -15,21 +17,14 @@ public class ServeurTCP extends Thread {
     /** Maximum de connexions client autorisées */
     private int maxConnexions;
     private Socket clientSocket;
-    private IContext contexte;
-    private IProtocole protocole;
     private int numeroPort;
-    private BioreactorSimulator reactorCaller;
+    private Bioreactor reactorCaller;
 
-    public ServeurTCP(int unNumeroPort, BioreactorSimulator reactor) {
+    public ServeurTCP(int unNumeroPort, Bioreactor reactor) {
         numeroPort = unNumeroPort;
-        maxConnexions = 10;
+        maxConnexions = 10000;
         reactorCaller = reactor;
         start();
-    }
-    public ServeurTCP(IContext b, IProtocole p, int port, BioreactorSimulator reactor) {
-        this(port, reactor);
-        contexte = b;
-        protocole = p;
     }
     /* l'ancienne methode go est remplacee par run */
     @Override
@@ -66,14 +61,8 @@ public class ServeurTCP extends Thread {
         }
 
     }
-    public BioreactorSimulator getBioreactor(){
+    public Bioreactor getBioreactor(){
         return reactorCaller;
-    }
-    public IProtocole getProtocole() {
-        return protocole;
-    }
-    public IContext getContexte() {
-        return contexte;
     }
 
 }

@@ -1,4 +1,4 @@
-package client;
+package client.TCPManager;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
@@ -13,8 +13,9 @@ public class ClientTCP {
     private int numeroPort; // ## attribute numeroPort
     private String nomServeur; // ## attribute nomServeur
     private BufferedReader socIn; // ## link socIn
-    private PrintStream socOut; // ## link socOut
+    public PrintStream socOut; // ## link socOut
     private Socket socketServeur; // ## link socketServeur
+    public RequestSender sender = new RequestSender(new RecurrentUpdateRequest());
     /**
      * Création d'un nouveau {@link ClientTCP} avec un nom de serveur et un numéro
      * de port
@@ -46,13 +47,11 @@ public class ClientTCP {
             System.err.println("Exception:  " + e);
         }
     }
-    public String transmettreChaine(String uneChaine) {
-        String msgServeur = null;
+    public String performSending() {
+        String msgServeur = "null";
         if (connexionServeur()) {
             try {
-                System.out.println("Client " + uneChaine);
-                socOut.println(uneChaine);
-                socOut.flush();
+                sender.performSending(socOut);
                 msgServeur = socIn.readLine();
                 System.out.println("Reponse serveur : " + msgServeur);
                 deconnexionServeur();
@@ -62,7 +61,7 @@ public class ClientTCP {
         }
         else {
 //            On simule la connexion au serveur du Bioréacteur
-            msgServeur = "0.5 4 5.6";
+            msgServeur = "error 1000000 1000000 1000000";
             System.out.println("Reponse serveur : " + msgServeur);
         }
 
