@@ -35,6 +35,6 @@ D'un autre côté, le programme est plutôt simple et plusieurs patrons de conce
 
 ### Auteurs
 
-@Victor-Alessandro
-@teatoscan
-@Clem-Pat
+- [@teatoscan](https://www.github.com/teatoscan)
+- [@Victor-Alessandro](https://github.com/Victor-Alessandro)
+- [@Clem-Pat](https://www.github.com/Clem-Pat)
