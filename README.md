@@ -32,3 +32,9 @@ Par dessin, le programme présente des problèmes en quelques cas:
 3. La fin de l'expériment avant la fin du temps totale de simulation.
 
 D'un autre côté, le programme est plutôt simple et plusieurs patrons de conception sont utilisés, l'amélioration est toujours possible mais la structure a été jugée satisfaisante.
+
+### Auteurs
+
+@Victor-Alessandro
+@teatoscan
+@Clem-Pat
