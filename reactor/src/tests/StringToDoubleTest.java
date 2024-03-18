@@ -19,9 +19,9 @@ public class StringToDoubleTest {
 
         // Check if the conversion is correct
         assertEquals(3, doubleList.size());
-        assertEquals(Optional.of(1.0), doubleList.get(0));
-        assertEquals(Optional.of(2.0), doubleList.get(1));
-        assertEquals(Optional.of(3.0), doubleList.get(2));
+        assertEquals(1.0, doubleList.get(0), 0.0); // Use delta for double comparison
+        assertEquals(2.0, doubleList.get(1), 0.0); // Use delta for double comparison
+        assertEquals(3.0, doubleList.get(2), 0.0); // Use delta for double comparison
     }
 
 }

@@ -12,7 +12,7 @@ public class DataManagerTest {
     public void testGetVariableValueAtTime() {
         DataManager dataManager = null;
         try {
-            dataManager = new DataManager("reactor/src/bioreactor/DataManager/2022-10-03-Act2-1.txt");
+            dataManager = new DataManager("bioreactor\\DataManager\\2022-10-03-Act2-1.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
