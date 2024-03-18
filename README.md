@@ -4,7 +4,7 @@
 À mesure que l'expérience est simulée à travers les données fournies, un client reçoit en temps réel l'actualisation de toutes les variables et peut encore choisir un instant quelconque pour retrouver l'état du système à ce stade.
 
 ### Architecture
-[Simplified Architecture](https://enstabretagne-my.sharepoint.com/:i:/g/personal/victor_queiroz_ensta-bretagne_org/EYz3aq8TPSJMu6IilJv9rIMBKRVIKbEcNwEJg2um3A4RNQ?e=eneKBm)
+[Simplified Architecture](https://enstabretagne-my.sharepoint.com/:i:/g/personal/victor_queiroz_ensta-bretagne_org/EYz3aq8TPSJMu6IilJv9rIMBZR3Pk8VQ2UkMeWuMX0f8nQ?e=Vdpe5u)
 
 Pour comprendre comment le programme fonctionne, une description de ces étapes dans l'ordre est intéressante.
 
@@ -15,13 +15,13 @@ Pour comprendre comment le programme fonctionne, une description de ces étapes 
 5. Pour les interfaces graphiques du client et du bioréacteur le patron de composite est employé, cette choix est basé dans le fait que la structure en arbre pour les elements qui compesent les interfaces visuelles est naturelle. On peu comprendre le GUI comme un carré qu'on subdivise en plusieur carrées successivement avec les Strings despcriptives et/ou champs à remplir dans la fin. Même si chaque portion est lègerement different, des abstractions permettent la conception en arbre.
 6. À la fin, pour le client, les Strings sont *parsed* pour retrouver les valeurs proches des valeurs doubles envoyés. Le client pourrait demander les données de différents façons, dont deux sont implémentés. Une en continu et l'autre sous demande directe d'un moment spécifique. Le patron stratégie aurait été plus utile si le programme changeait selon des contextes, mais les deux façons ont été considérées importantes et le contexte enlevé. Néanmoins, l'architecture choisie permet qu'en ajoutant une interface pour le contexte et les méthodes/stratégies la pièce soit enlargi pour accepter plusieurs stratégies.
 
-[Complete Architecture](https://enstabretagne-my.sharepoint.com/:i:/g/personal/victor_queiroz_ensta-bretagne_org/EXojc2LkLolFiJ3FAP_43tQBsKDlAruLY6TnOl1x-znZSg?e=fXNMjJ)
+[Complete Architecture](https://enstabretagne-my.sharepoint.com/:i:/g/personal/victor_queiroz_ensta-bretagne_org/EXojc2LkLolFiJ3FAP_43tQBTGpfWETSFKZh-Nl6q7f1oQ?e=yTXuhr)
 
 #### Representation en Diagramme de Séquence
 
 Pour ilustrer ce que vient d'être décrit un diagramme a été conçu Il est simplifié tant en termes de la communication, qui est réalisé en continu, comme en enlevant les *handshakes* qui la lancent.
 
-[Diagramme Sequentiel Simple](https://enstabretagne-my.sharepoint.com--i--g-personal-victor_queiroz_ensta-bretagne_org-EXa6kITP1N1Gp6sh2NhQlk8BnFD5H5JNkPZA.url)
+[Diagramme Sequentiel Simple](https://enstabretagne-my.sharepoint.com/:i:/g/personal/victor_queiroz_ensta-bretagne_org/EXa6kITP1N1Gp6sh2NhQlk8BEeXAKIIp_FYSuyhT0qPS6A?e=gCgxRv)
 
 #### Points à améliorer
 
