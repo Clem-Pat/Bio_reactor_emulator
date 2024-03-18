@@ -6,7 +6,6 @@ import java.io.IOException;
  *
  */
 public class MainBioreactor {
-
     /**
      * Méthode principale : lance le programme
      *

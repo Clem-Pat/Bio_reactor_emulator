@@ -10,16 +10,27 @@ import java.beans.PropertyChangeListener;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Interface graphique du bioreacteur.
+ */
 public class BioreactorGUI extends JFrame implements PropertyChangeListener {
     public List<LabelParameter> listPanelsCurrentParams;
     public Bioreactor reactor;
+
+    /**
+     * Constructeur de la classe BioreactorGUI.
+     *
+     * @param initReactor Réacteur biologique à associer à l'interface graphique.
+     */
     public BioreactorGUI(Bioreactor initReactor) {
         reactor = initReactor;
-        // On vient ensuite "écouter" le réacteur (c'est la classe BioreactorGUI qui va
-        // recevoir les notifications)
         reactor.getPropertyChangeSupport().addPropertyChangeListener(this);
         initGUI();
     }
+
+    /**
+     * Initialise l'interface graphique.
+     */
     private void initGUI() {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.setVisible(true);
@@ -48,6 +59,12 @@ public class BioreactorGUI extends JFrame implements PropertyChangeListener {
             pack();
         }
     }
+
+    /**
+     * Méthode appelée lorsqu'une propriété change.
+     *
+     * @param evt Événement de changement de propriété.
+     */
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         Object newValue = evt.getNewValue();

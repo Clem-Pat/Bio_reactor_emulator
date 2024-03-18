@@ -1,0 +1,8 @@
+bioreactor
+bioreactor.DataManager
+bioreactor.TCPManager
+bioreactor.variableManager
+client
+client.IHMObjects
+client.TCPManager
+tests
