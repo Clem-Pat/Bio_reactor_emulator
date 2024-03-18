@@ -18,7 +18,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
  * Il va stocker la valeur actuelle de la temp, O2, Ph ainsi que les valeurs précédentes (dans des listes)
  * Il va actualiser les valeurs des variables à chaque tic de la simulation cad toutes les 3 secondes (t1 = t0 + 3sec => donne currentTime = 1)
  */
-public class Bioreactor {
+public class Bioreactor{
     public final PropertyChangeSupport pcSupport;
     public DataManager data; //Change data file address
     public int currentNumberOfTicks = -1;
@@ -27,8 +27,8 @@ public class Bioreactor {
     public int tick = 2;    //call setUpdateValues every tick seconds
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
-    public Bioreactor() throws IOException {
-        data = new DataManager(null);
+    public Bioreactor(String path) throws IOException {
+        data = new DataManager(path);
         ServeurTCP serveurtcp = new ServeurTCP(7777, this);
         pcSupport = new PropertyChangeSupport(this);
         for (String type : data.variablesTypesToConsider){

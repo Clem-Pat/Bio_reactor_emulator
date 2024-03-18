@@ -8,74 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c2e08d6-2ed2-48ce-a599-ae2fe6cc546e" name="Changes" comment="Tout fonctionne, on a utilisé un Pattern Stratégie pour les requetes TCP. On commence ici à améliorer le O de SOLID en utilisant le pattern Composant Composite avec les collections de variables">
-      <change afterPath="$PROJECT_DIR$/Javadoc/Bioreactor.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/BioreactorGUI.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/MainBioreactor.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/allclasses-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/allpackages-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/copy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/element-list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/help-doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/link.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/member-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/module-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/overview-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/overview-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/package-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/search-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/serialized-form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/tag-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javadoc/type-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/tests/BioreactorGUITest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactor/src/tests/StringToDoubleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter_api.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/scalatestplus_junit_2_13_0_RC2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/projet_reacteur.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projet_reacteur.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ClientGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/ClientTCP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/Bioreactor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/Bioreactor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/Bioreactor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/Bioreactor$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/Bioreactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/Bioreactor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/BioreactorGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/DataManager/DataManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/DataManager/DataManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/MainBioreactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/MainBioreactor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/TCPManager/ServeurSpecifique.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/TCPManager/ServeurSpecifique.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/TCPManager/ServeurTCP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/TCPManager/ServeurTCP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/IVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/IVariable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/Oxygen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/Oxygen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/Ph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/Ph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/Temperature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/Temperature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/Variable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/bioreactor/variableManager/Variable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/ClientGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/IHMObjects/LabelParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/IHMObjects/LabelParameter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/IHMObjects/TextAreaParameter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/IHMObjects/TextAreaParameter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/IHMObjects/TextAreaParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/IHMObjects/TextAreaParameter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/MainClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/MainClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/ClientTCP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/ClientTCP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/RecurrentUpdateRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/RecurrentUpdateRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/RequestSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/RequestSender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/SendingRequestStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/SendingRequestStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/SpecificUpdateRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/client/TCPManager/SpecificUpdateRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/reactor/tests/DataManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/reactor/tests/DataManagerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactor/reactor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/reactor.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/BioreactorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/BioreactorGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/DataManager/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/DataManager/DataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/Bioreactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/Bioreactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactor/src/bioreactor/MainBioreactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/bioreactor/MainBioreactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactor/src/client/IHMObjects/LabelParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/client/IHMObjects/LabelParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactor/src/tests/BioreactorGUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/tests/BioreactorGUITest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactor/src/tests/DataManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/reactor/src/tests/DataManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,34 +53,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "U:/Téléchargements",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/projet_reacteur/reactor/tests/src/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;U:/Téléchargements&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/projet_reacteur/reactor/tests/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="U:\Téléchargements\tiem2endit\reactor\src\bioreactor\DataManager" />
+      <recent name="U:\Téléchargements\tiem2endit\reactor\src" />
+      <recent name="U:\Téléchargements\tiem2endit\reactor\src\bioreactor" />
       <recent name="C:\Users\queirovi\Documents\bioreacteur\Javadoc" />
       <recent name="C:\projet_reacteur\out" />
     </key>
@@ -148,44 +92,56 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="DataManagerTest.represent_specific_time" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BioreacteurGuiTest.testInitGui" type="JUnit" factoryName="JUnit">
       <module name="reactor" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.DataManagerTest" />
-      <option name="METHOD_NAME" value="represent_specific_time" />
+      <option name="MAIN_CLASS_NAME" value="tests.BioreactorGUITest" />
+      <option name="METHOD_NAME" value="testInitGUI" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataManagerTest.represent_specific_time_specific_parameter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataManagerTest.testVariableValueAtTime" type="JUnit" factoryName="JUnit">
       <module name="reactor" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.DataManagerTest" />
-      <option name="METHOD_NAME" value="represent_specific_time_specific_parameter" />
+      <option name="METHOD_NAME" value="testGetVariableValueAtTime" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.DataManagerTest.represent_specific_time" />
-        <item itemvalue="JUnit.DataManagerTest.represent_specific_time_specific_parameter" />
-      </list>
-    </recent_temporary>
+    <configuration name="StringToDoubleTest.StringToDouble" type="JUnit" factoryName="JUnit">
+      <module name="reactor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.StringToDoubleTest" />
+      <option name="METHOD_NAME" value="StringToDouble" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.StringToDoubleTest.StringToDouble" />
+      <item itemvalue="JUnit.DataManagerTest.testVariableValueAtTime" />
+      <item itemvalue="JUnit.BioreacteurGuiTest.testInitGui" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -201,6 +157,7 @@
       <workItem from="1709837236083" duration="14632000" />
       <workItem from="1710432973567" duration="39621000" />
       <workItem from="1710701809104" duration="18981000" />
+      <workItem from="1710779134919" duration="2638000" />
     </task>
     <task id="LOCAL-00001" summary="cl">
       <option name="closed" value="true" />

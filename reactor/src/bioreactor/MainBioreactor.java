@@ -13,7 +13,7 @@ public class MainBioreactor {
      */
     public static void main(String[] args) throws IOException {
         // Instancie l'interface graphique du client
-        Bioreactor reactor = new Bioreactor();
+        Bioreactor reactor = new Bioreactor( null );
         new BioreactorGUI(reactor);
     }
 }

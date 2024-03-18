@@ -17,7 +17,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="junit.jupiter.api" level="project" />
     <orderEntry type="library" name="scalatestplus.junit.4.13_3.0.RC2" level="project" />
+    <orderEntry type="library" name="junit.jupiter.api" level="project" />
+    <orderEntry type="library" name="scalatestplus.junit_2.13.0.RC2" level="project" />
   </component>
 </module>
