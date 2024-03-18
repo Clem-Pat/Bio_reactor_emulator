@@ -38,3 +38,6 @@ D'un autre côté, le programme est plutôt simple et plusieurs patrons de conce
 - [@teatoscan](https://www.github.com/teatoscan)
 - [@Victor-Alessandro](https://github.com/Victor-Alessandro)
 - [@Clem-Pat](https://www.github.com/Clem-Pat)
+
+### JavaDoc 
+https://clem-pat.github.io/Bio_reactor_emulator/
