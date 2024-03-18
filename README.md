@@ -19,7 +19,7 @@ Pour comprendre comment le programme fonctionne, une description de ces étapes 
 
 #### Representation en Diagramme de Séquence
 
-Pour ilustrer ce que vient d'être décrit un diagramme a été conçu Il est simplifié tant en termes de la communication, qui est réalisé en continu, comme en enlevant les *handshakes* qui la lancent.
+Pour ilustrer ce que vient d'être décrit un diagramme a été conçu Il est simplifié tant en termes de la communication, qu'est réalisé en continu, comme en enlevant les *handshakes* qui la lancent.
 
 [Diagramme Sequentiel Simple](https://enstabretagne-my.sharepoint.com/:i:/g/personal/victor_queiroz_ensta-bretagne_org/EXa6kITP1N1Gp6sh2NhQlk8BEeXAKIIp_FYSuyhT0qPS6A?e=gCgxRv)
 
